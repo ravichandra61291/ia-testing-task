@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "bbbf1f73-1e11-48ff-baa7-043dca48f516": {
+      "ProjectGuid": "bbbf1f73-1e11-48ff-baa7-043dca48f516",
+      "DisplayName": "DuplicateFinder.Logic",
+      "ColorIndex": 0
+    },
+    "5e2400bf-0f4b-4b33-8ab2-c93bed8a9d77": {
+      "ProjectGuid": "5e2400bf-0f4b-4b33-8ab2-c93bed8a9d77",
+      "DisplayName": "DuplicateFinder.Console",
+      "ColorIndex": 1
+    },
+    "57ff726a-41ec-4c50-8611-b211dc2d5255": {
+      "ProjectGuid": "57ff726a-41ec-4c50-8611-b211dc2d5255",
+      "DisplayName": "DuplicateFinderWPF",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

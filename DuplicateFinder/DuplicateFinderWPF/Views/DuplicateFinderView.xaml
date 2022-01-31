@@ -1,0 +1,265 @@
+﻿<Window x:Class="DuplicateFinderWPF.Views.DuplicateFinderView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DuplicateFinderWPF.Views"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="DuplicateFinderView" Height="600" Width="971"
+        FontFamily="/DuplicateFinderWPF;component/Views/Ressources/Fonts/#Roboto Light"
+        WindowStyle="None">
+    
+    <!-- th background displays a gradient of dark grey tones -->
+    <!-- The colors displayed in the project are taken directly from the Isar Aerospace website to match its design -->
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Offset="0.1" Color="#282828" />
+                <GradientStop Offset="1" Color="#121314" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition MinHeight="350"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition MinWidth="173" Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Grid for draggable control bar -->
+        <Grid Background="Transparent"
+              Grid.ColumnSpan="3"
+              x:Name="ControlBar"
+              MouseDown="ControlBar_MouseDown">
+
+            <!-- Control bar division -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <!-- Draggable control bar -->
+                <ColumnDefinition Width="35"/>
+                <!-- X-Button to close the window -->
+            </Grid.ColumnDefinitions>
+
+            <!-- click on X-Button closes the window and triggers style change -->
+            <Button x:Name="ClossingButton"
+                    Content="X"
+                    Foreground="White"
+                    FontSize="16"
+                    FontWeight="Medium"
+                    Margin="0,5,5,0"
+                    Grid.Column="2"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Click="ClossingButton_Click">
+
+                <!-- X-Button turns bright red when the mouse is over it. The cursor turns into hand -->
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FC4C70"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="25" Height="25"
+                                    CornerRadius="20"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+
+        <!-- StackPanel for the middle column to organize the content in proportion to its size -->
+        <StackPanel Grid.Row="0"
+                    Grid.Column="1"
+                    Grid.RowSpan="2"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Margin="0,0,0,0">
+
+            <!-- Upper StackPanel encapsulates non-functional component -->
+            <StackPanel>
+                <!-- Isar Aerospace Logo - just for it looks good -->
+                <StackPanel>
+                    <Image Width="73" Height="73"
+                       Source="Ressources/Images/LogoTransparent.png"
+                       RenderOptions.BitmapScalingMode="Fant"/>
+                </StackPanel>
+
+                <!-- Program name -->
+                <TextBlock Text="Duplicate Finder"
+                       Foreground="White"
+                       FontSize="34"
+                       FontWeight="Bold"
+                       TextAlignment="Center"
+                       Margin="0,10,0,10"/>
+            </StackPanel>
+
+            <!-- Second StackPanel: text box to Directory Path -->
+            <StackPanel Margin="0,10,0,10">
+                <TextBox MinWidth="360"
+                         Width="auto"
+                         MaxWidth="950"
+                         Foreground="white"
+                         Background="Transparent"
+                         x:Name="Path" 
+                         FontSize="14"
+                         TextAlignment="Center"
+                         HorizontalContentAlignment="Center"
+                         VerticalContentAlignment="Center"
+                         BorderThickness="1.5"
+                         BorderBrush="#2b5DAB"
+                         MinHeight="24">
+                </TextBox>
+            </StackPanel>
+
+            <!-- Third StackPanel:  Launch Button for program execution -->
+            <StackPanel Orientation="Horizontal"
+                        Margin="0,10,0,10"
+                        HorizontalAlignment="Center">
+                <Button Content="Launch"
+                        x:Name="Launch"
+                        Foreground="White"
+                        FontSize="16"
+                        FontWeight="Medium">
+
+                    <!-- Launch Button darkens when the cursor is over it -->
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#2b5DAB"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#1E4178"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Width="100" Height="25"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
+        <ScrollViewer Grid.Column="0"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="3">
+            <StackPanel Grid.Column="0"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="3"
+                        VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="782">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition MinHeight="300"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Results"
+                           Foreground="White"
+                           FontSize="24"
+                           Opacity="0.8"
+                           TextAlignment="Center"
+                           Margin="0,10,0,10"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="3"
+                           Grid.Row="0"
+                           />
+
+                    <StackPanel Grid.Row="1"
+                               Grid.Column="0">
+                        <!-- Duplicates by size -->
+                        <TextBlock Text="Duplicates by size:"
+                               TextAlignment="Center"
+                               FontSize="17"
+                               FontWeight="Medium"
+                               Foreground="White"
+                               Margin="0,10,0,10"
+                               TextWrapping="Wrap"/>
+
+                        <!-- Result of duplicates by size -->
+                        <TextBlock x:Name="DuplicateBySize"
+                               TextAlignment="Center"
+                               FontSize="14"
+                               FontWeight="Normal"
+                               Foreground="White"
+                               Margin="5,10,5,10"
+                               TextWrapping="Wrap"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1"
+                               Grid.Column="1">
+                        <!-- Duplicates by size and name -->
+                        <TextBlock Text="Duplicates by size and name:"
+                               TextAlignment="Center"
+                               FontSize="17"
+                               FontWeight="Medium"
+                               Foreground="White"
+                               Margin="0,10,0,10"
+                               TextWrapping="Wrap"/>
+
+                        <!-- Result of duplicates by size and name -->
+                        <TextBlock x:Name="DuplicateBySizeAndName"
+                               TextAlignment="Center"
+                               FontSize="14"
+                               FontWeight="Normal"
+                               Foreground="White"
+                               Margin="5,10,5,10"
+                               TextWrapping="Wrap"/>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1"
+                               Grid.Column="2">
+                        <!-- Duplicates by MD5 Hash -->
+                        <TextBlock Text="Duplicates by MD5:"
+                               TextAlignment="Center"
+                               FontSize="17"
+                               FontWeight="Medium"
+                               Foreground="White"
+                               Margin="0,10,0,10"
+                               TextWrapping="Wrap"/>
+
+                        <!-- Result of duplicates by MD5 hash -->
+                        <TextBlock x:Name="DuplicateByMD5"
+                               TextAlignment="Center"
+                               FontSize="14"
+                               FontWeight="Normal"
+                               Foreground="White"
+                               Margin="5,10,5,10"
+                               TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

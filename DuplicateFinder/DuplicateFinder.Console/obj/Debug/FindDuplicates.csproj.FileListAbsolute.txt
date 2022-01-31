@@ -1,0 +1,18 @@
+\\fs\Ground Equipment\99_GeneralAndAdmin\01_ControlSystem\03_GUI\99_Misc\WorkingStudentTask\FindDuplicates\bin\Debug\FindDuplicates.exe
+\\fs\Ground Equipment\99_GeneralAndAdmin\01_ControlSystem\03_GUI\99_Misc\WorkingStudentTask\FindDuplicates\bin\Debug\FindDuplicates.pdb
+\\fs\Ground Equipment\99_GeneralAndAdmin\01_ControlSystem\03_GUI\99_Misc\WorkingStudentTask\FindDuplicates\bin\Debug\DuplicateFinderLib.dll
+\\fs\Ground Equipment\99_GeneralAndAdmin\01_ControlSystem\03_GUI\99_Misc\WorkingStudentTask\FindDuplicates\bin\Debug\DuplicateFinderLib.pdb
+\\fs\Ground Equipment\99_GeneralAndAdmin\01_ControlSystem\03_GUI\99_Misc\WorkingStudentTask\FindDuplicates\obj\Debug\FindDuplicates.csprojAssemblyReference.cache
+\\fs\Ground Equipment\99_GeneralAndAdmin\01_ControlSystem\03_GUI\99_Misc\WorkingStudentTask\FindDuplicates\obj\Debug\FindDuplicates.csproj.CoreCompileInputs.cache
+\\fs\Ground Equipment\99_GeneralAndAdmin\01_ControlSystem\03_GUI\99_Misc\WorkingStudentTask\FindDuplicates\obj\Debug\FindDuplicates.csproj.CopyComplete
+\\fs\Ground Equipment\99_GeneralAndAdmin\01_ControlSystem\03_GUI\99_Misc\WorkingStudentTask\FindDuplicates\obj\Debug\FindDuplicates.exe
+\\fs\Ground Equipment\99_GeneralAndAdmin\01_ControlSystem\03_GUI\99_Misc\WorkingStudentTask\FindDuplicates\obj\Debug\FindDuplicates.pdb
+Z:\99_GeneralAndAdmin\01_ControlSystem\03_GUI\99_Misc\WorkingStudentTask\FindDuplicates\bin\Debug\FindDuplicates.exe
+Z:\99_GeneralAndAdmin\01_ControlSystem\03_GUI\99_Misc\WorkingStudentTask\FindDuplicates\bin\Debug\FindDuplicates.pdb
+Z:\99_GeneralAndAdmin\01_ControlSystem\03_GUI\99_Misc\WorkingStudentTask\FindDuplicates\bin\Debug\DuplicateFinderLib.dll
+Z:\99_GeneralAndAdmin\01_ControlSystem\03_GUI\99_Misc\WorkingStudentTask\FindDuplicates\bin\Debug\DuplicateFinderLib.pdb
+Z:\99_GeneralAndAdmin\01_ControlSystem\03_GUI\99_Misc\WorkingStudentTask\FindDuplicates\obj\Debug\FindDuplicates.csprojAssemblyReference.cache
+Z:\99_GeneralAndAdmin\01_ControlSystem\03_GUI\99_Misc\WorkingStudentTask\FindDuplicates\obj\Debug\FindDuplicates.csproj.CoreCompileInputs.cache
+Z:\99_GeneralAndAdmin\01_ControlSystem\03_GUI\99_Misc\WorkingStudentTask\FindDuplicates\obj\Debug\FindDuplicates.csproj.CopyComplete
+Z:\99_GeneralAndAdmin\01_ControlSystem\03_GUI\99_Misc\WorkingStudentTask\FindDuplicates\obj\Debug\FindDuplicates.exe
+Z:\99_GeneralAndAdmin\01_ControlSystem\03_GUI\99_Misc\WorkingStudentTask\FindDuplicates\obj\Debug\FindDuplicates.pdb
