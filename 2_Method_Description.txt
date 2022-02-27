@@ -1,0 +1,35 @@
+Main program: 
+https://github.com/lucasnmilagres/ia-testing-task/blob/master/DuplicateFinder/DuplicateFinder.Console/Program.cs
+
+The control calls https://github.com/lucasnmilagres/ia-testing-task/blob/master/DuplicateFinder/DuplicateFinder.Logic/DuplicateFinder.cs
+to pass value for 3 patterns
+
+step 1: search for duplicate files in directory path
+step 2: while directory exist, it print duplicate files by comparing with 3 below patterns:
+		duplicatesBySize
+		duplicatesBySizeAndName
+		duplicatesByHash
+step 3: Run a loop for each duplicate files in the directory and rename it in the same directory
+
+
+- https://github.com/lucasnmilagres/ia-testing-task/blob/master/DuplicateFinder/DuplicateFinder.Logic/DuplicateFinder.cs
+- Gets directory info and FileList
+- CollectCandidates
+	- Run a loop for list of Files in a directory by keeping i = 0; if i < FileList.count then add that file to a new list called pathList.
+	- iterate over the rest of the files for j = i + 1; j < FileList.Count
+	- Code will compare the FileList.Length and FileList.Name of i and j of two elements have the same length and same Name, and it will add
+		the FileList[j] to pathList.
+	- Checks if count of pathList is greater that one, it will creates a duplicatesList by adding the pathList and return duplicatesList.
+- CollectCandidates
+	- Run a loop for list of Files in a directory by keeping i = 0; if i < FileList.count then add that file to a new list called pathList.
+	- iterate over the rest of the files for j = i + 1; j < FileList.Count
+	- Code will compare the FileList.Length of i and j of two elements have the same length,and it will add the FileList[j] to pathList.
+	- Checks if count of pathList is greater that one, it will creates a duplicatesList by adding the pathList and return duplicatesList.
+- CheckCandidates
+	- Iterate over a FilePaths for identical content by computing the MD5 hash of each file and detecting duplicates.
+	- if the value of duplicateByHash.count is greater than 1, add duplicateByHash.Value to selectedDuplicates and return it to main function.
+	
+
+
+
+
