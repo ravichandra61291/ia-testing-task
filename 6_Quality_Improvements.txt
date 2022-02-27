@@ -1,0 +1,6 @@
+DuplicateFinder software Quality improvements:
+
+1. Application has only close option but not minimise and maximise option
+	- Minimise and maximise option would be handy to operate the application
+2. When there are many duplicate files (e.g. 100 duplicate files) and after a valid launch operation all are listed in a small output field which is hard to analyse the files. 
+	- Instead of this a log file or the data can be given in a .CSV file

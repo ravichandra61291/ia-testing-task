@@ -1,0 +1,40 @@
+DuplicateFinder software existing defects:
+
+Defect 1:
+
+Defect name: 
+DuplicateFinder fails to find duplicate files in directory mentioned if the directory has sub folders
+
+Defect description:
+
+When the directory given in the application to find duplicate files has subfolders then when launch operation is performed then the application searches the duplicate files in the first subfolder and returns the results from that subfolder. 
+e.g: 
+- Folder X is the directory where the duplicate files are need to be searched and it contains 5 duplicate files of same size.
+- Folder X1 is a subfolder in folder X and it contains 3 duplicate files of same size
+- When launch operation is performed with input as directory path mentioned to X then result of 3 duplicates from X1 folder is returned instead of the 5 duplicate from X folder.
+
+Expected result: When search operation is done for folder X only the results of folder X should be returned. In the above example it is 5 duplicate files by size.
+
+----------------------------------------
+
+Defect 2:
+
+Defect name:
+DuplicateFinder fails to rename the files
+
+Defect description:
+
+When a valid operation is performed with the application and then there are some duplicate files in the results, the files are not renamed.
+
+Expected result: The files should be renamed if any duplicate files are found.
+
+----------------------------------------
+
+Defect 3:
+
+Defect name:
+Blacklisted folder is not considered as blacklisted folder, the function is not connected to the main logic
+
+Defect description:
+
+Blacklisted folders mentioned in blacklist.txt file is not considered as blacklisted, instead duplicate files from results of the blacklist folder is also checked and displayed in results.
