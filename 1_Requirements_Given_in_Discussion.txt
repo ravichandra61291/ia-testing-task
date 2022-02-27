@@ -1,0 +1,18 @@
+DuplicateFinder software requirement analysis:
+
+Requirements:
+
+	To find the duplicate files in a given directory path by comparing:
+		size
+		name
+		hash key
+	To rename any duplicate file found by selecting it from the results and giving a new filename.
+
+Conditions:
+
+	Rename of the duplicate file
+	Not to change the directory of the file renamed
+	Not to overwrite any other files which may already exists with the same name
+		Note: The folders used do not have a backup
+	Not to touch blacklisted files, which are mentioned in blacklist.txt files
+
